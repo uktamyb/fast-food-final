@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Redirect,
-} from 'react-router-dom';
-import { Body, Container } from './style';
-import Sidebar from '../components/Sidebar';
-import { sidebar } from '../utils/sidebar';
-import Notfound from '../components/Notfound';
+  Redirect
+} from "react-router-dom";
+import { Container } from "./style";
+import Sidebar from "../components/Sidebar";
+import { sidebar } from "../utils/sidebar";
+import Notfound from "../components/Notfound";
 
 export const Root = () => {
   return (
@@ -24,10 +24,10 @@ export const Root = () => {
           {sidebar.map(({ id, path, Component }) => (
             <Route path={path} component={Component} />
           ))}
-          <Route exact path='/'>
-            <Redirect to='/buyurtmalar' />
+          <Route exact path="/">
+            <Redirect to="/buyurtmalar" />
           </Route>
-          <Route path='*' component={Notfound} />
+          <Route path="*" component={Notfound} />
         </Switch>
       </Container>
     </Router>
